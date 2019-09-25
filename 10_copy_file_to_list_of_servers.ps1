@@ -1,7 +1,8 @@
 $ServerList = @(
 "server_01", 
 "server_02", 
-"server_03" 
+"server_03",
+"server_04" 
 ) 
 
 foreach ($Server in $ServerList)
