@@ -9,7 +9,7 @@ $ServerList = @(
 $listmemorysettings = @() 
 foreach ($Server in $ServerList)
 {
-	$listmemorysettings = $listmemorysettings +(sqlcmd -E -S $system -d "master"  -Q  "SET NOCOUNT On; SELECT InstanceName = @@servername,  value_in_use FROM sys.configurations WHERE name = 'Max Server Memory (MB)'" -W -w 1024 -s ”,”) 	
-    
+	$listmemorysettings = $listmemorysettings +(Invoke-Sqlcmd -Query "SET NOCOUNT On; SELECT InstanceName = @@servername,  value_in_use FROM sys.configurations WHERE name = 'Max Server Memory (MB)'"  -ServerInstance $Server -Database "master") 	
+	
 }
-$listmemorysettings  |  out-file ".\list_memory_setting.txt"
+$listmemorysettings  
