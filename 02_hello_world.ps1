@@ -9,7 +9,7 @@ $ServerList = @(
 "server_05"
 "server_06"
 "server_07"
-"server_08"
+"server_08_"
 )
 foreach ($Server in $ServerList)
 {
