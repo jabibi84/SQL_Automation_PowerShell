@@ -5,11 +5,11 @@
 $ServerList = @(
 "server_01", 
 "server_03", 
-"server_03"
-"server_03"
-"server_03"
-"server_03"
-"server_03"
+"server_04"
+"server_05"
+"server_06"
+"server_07"
+"server_08"
 )
 foreach ($Server in $ServerList)
 {
